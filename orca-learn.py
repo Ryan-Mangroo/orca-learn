@@ -14,7 +14,7 @@ def classify():
 
 	log.info('TOKEN: ' + token)
 	log.info('KEYWORDS: ' + keywords)
-	log.info(json.loads[0])
+	log.info(json.dumps[0])
 
 	# Check for a null token or keyword
 	if(not token):
