@@ -22,7 +22,7 @@ def classify():
 
 
 	# Then, See if the token is valid
-	if(token != os.environ.APP_TOKEN):
+	if(token != os.environ['APP_TOKEN']):
 		return jsonify({'message':'Invalid token'}), 401
 
 	# Now we can do the classification
