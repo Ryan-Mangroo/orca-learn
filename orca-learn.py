@@ -4,6 +4,8 @@ import random
 import os
 app = Flask(__name__)
 
+os.environ['APP_TOKEN'] = '1234'
+
 @app.route('/classify', methods=['GET'])
 def classify():
 	log.function('classify')
@@ -18,10 +20,10 @@ def classify():
 	if(not token):
 		log.error('NULL TOKEN');
 		return jsonify({'message':'No token given'}), 400
+	
 	if(not keywords):
 		log.error('NULL KEYWORDS');
 		return jsonify({'message':'No keywords given'}), 400
-
 
 	# Then, See if the token is valid
 	if(token != os.environ['APP_TOKEN']):
@@ -39,3 +41,7 @@ def classify():
 	]
 
 	return jsonify(random.choice(results))
+
+
+
+	
