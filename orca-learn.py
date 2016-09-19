@@ -2,7 +2,6 @@ from flask import Flask, request, jsonify
 import log
 import random
 import os
-import json
 app = Flask(__name__)
 
 @app.route('/classify', methods=['GET'])
@@ -14,7 +13,6 @@ def classify():
 
 	log.info('TOKEN: ' + token)
 	log.info('KEYWORDS: ' + keywords)
-	type(keywords)
 
 	# Check for a null token or keyword
 	if(not token):
