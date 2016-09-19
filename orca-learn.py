@@ -4,8 +4,6 @@ import random
 import os
 app = Flask(__name__)
 
-os.environ['APP_TOKEN'] = '1234'
-
 @app.route('/classify', methods=['GET'])
 def classify():
 	log.function('classify')
